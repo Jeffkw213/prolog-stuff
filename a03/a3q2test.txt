@@ -1,0 +1,14 @@
+b) 
+    ?- goalPartB(S), solPartB(S).
+    S = do(push(box2, door2Loc, switch2Loc), do(push(box2, door1Loc, door2Loc), do(push(box2, initBox2Loc, door1Loc), do(go(door1Loc, initBox2Loc), do(go(door3Loc, door1Loc), do(go(shakeyLocation, door3Loc), s0)))))) ;
+    false.
+
+c) 
+    ?- do(getBox2toRoom2, s0, S), solPartB(S), show_act_seq(S).
+    false.
+    IT DOESN'T WORK 
+d)  
+    I don't even know how to do. 
+
+e)
+    I don't even know how to do.

@@ -1,0 +1,45 @@
+?- [q2].
+Warning: /mnt/c/Users/wingt/Desktop/University/Year_3/EECS3401/assignments/a01/q2.prolog:20:
+        Singleton variables: [Name,Last,Gender,Age]
+true.
+
+?- find(Gang).
+Gang = [kid('Angela', 'Leung', female, 5), kid('David', 'Diamond', male, 7), kid('Mary', 'Grant', female, 8)] ;
+Gang = [kid('Angela', 'Leung', female, 5), kid('David', 'Grant', male, 8), kid('Mary', 'Diamond', female, 7)] ;
+Gang = [kid('Angela', 'Diamond', female, 7), kid('David', 'Leung', male, 5), kid('Mary', 'Grant', female, 8)] ;
+Gang = [kid('Angela', 'Grant', female, 8), kid('David', 'Leung', male, 5), kid('Mary', 'Diamond', female, 7)] ;
+Gang = [kid('Angela', 'Diamond', female, 7), kid('David', 'Grant', male, 8), kid('Mary', 'Leung', female, 5)] ;
+Gang = [kid('Angela', 'Grant', female, 8), kid('David', 'Diamond', male, 7), kid('Mary', 'Leung', female, 5)] ;
+Gang = [kid('Angela', 'Leung', female, 5), kid('Mary', 'Diamond', female, 7), kid('David', 'Grant', male, 8)] ;
+Gang = [kid('Angela', 'Leung', female, 5), kid('Mary', 'Grant', female, 8), kid('David', 'Diamond', male, 7)] ;
+Gang = [kid('Angela', 'Diamond', female, 7), kid('Mary', 'Leung', female, 5), kid('David', 'Grant', male, 8)] ;
+Gang = [kid('Angela', 'Grant', female, 8), kid('Mary', 'Leung', female, 5), kid('David', 'Diamond', male, 7)] ;
+Gang = [kid('Angela', 'Diamond', female, 7), kid('Mary', 'Grant', female, 8), kid('David', 'Leung', male, 5)] ;
+Gang = [kid('Angela', 'Grant', female, 8), kid('Mary', 'Diamond', female, 7), kid('David', 'Leung', male, 5)] ;
+Gang = [kid('David', 'Leung', male, 5), kid('Angela', 'Diamond', female, 7), kid('Mary', 'Grant', female, 8)] ;
+Gang = [kid('David', 'Leung', male, 5), kid('Angela', 'Grant', female, 8), kid('Mary', 'Diamond', female, 7)] ;
+Gang = [kid('David', 'Diamond', male, 7), kid('Angela', 'Leung', female, 5), kid('Mary', 'Grant', female, 8)] ;
+Gang = [kid('David', 'Grant', male, 8), kid('Angela', 'Leung', female, 5), kid('Mary', 'Diamond', female, 7)] ;
+Gang = [kid('David', 'Diamond', male, 7), kid('Angela', 'Grant', female, 8), kid('Mary', 'Leung', female, 5)] ;
+Gang = [kid('David', 'Grant', male, 8), kid('Angela', 'Diamond', female, 7), kid('Mary', 'Leung', female, 5)] ;
+Gang = [kid('Mary', 'Leung', female, 5), kid('Angela', 'Diamond', female, 7), kid('David', 'Grant', male, 8)] ;
+Gang = [kid('Mary', 'Leung', female, 5), kid('Angela', 'Grant', female, 8), kid('David', 'Diamond', male, 7)] ;
+Gang = [kid('Mary', 'Diamond', female, 7), kid('Angela', 'Leung', female, 5), kid('David', 'Grant', male, 8)] ;
+Gang = [kid('Mary', 'Grant', female, 8), kid('Angela', 'Leung', female, 5), kid('David', 'Diamond', male, 7)] ;
+Gang = [kid('Mary', 'Diamond', female, 7), kid('Angela', 'Grant', female, 8), kid('David', 'Leung', male, 5)] ;
+Gang = [kid('Mary', 'Grant', female, 8), kid('Angela', 'Diamond', female, 7), kid('David', 'Leung', male, 5)] ;
+Gang = [kid('David', 'Leung', male, 5), kid('Mary', 'Diamond', female, 7), kid('Angela', 'Grant', female, 8)] ;
+Gang = [kid('David', 'Leung', male, 5), kid('Mary', 'Grant', female, 8), kid('Angela', 'Diamond', female, 7)] ;
+Gang = [kid('David', 'Diamond', male, 7), kid('Mary', 'Leung', female, 5), kid('Angela', 'Grant', female, 8)] ;
+Gang = [kid('David', 'Grant', male, 8), kid('Mary', 'Leung', female, 5), kid('Angela', 'Diamond', female, 7)] ;
+Gang = [kid('David', 'Diamond', male, 7), kid('Mary', 'Grant', female, 8), kid('Angela', 'Leung', female, 5)] ;
+Gang = [kid('David', 'Grant', male, 8), kid('Mary', 'Diamond', female, 7), kid('Angela', 'Leung', female, 5)] ;
+Gang = [kid('Mary', 'Leung', female, 5), kid('David', 'Diamond', male, 7), kid('Angela', 'Grant', female, 8)] ;
+Gang = [kid('Mary', 'Leung', female, 5), kid('David', 'Grant', male, 8), kid('Angela', 'Diamond', female, 7)] ;
+Gang = [kid('Mary', 'Diamond', female, 7), kid('David', 'Leung', male, 5), kid('Angela', 'Grant', female, 8)] ;
+Gang = [kid('Mary', 'Grant', female, 8), kid('David', 'Leung', male, 5), kid('Angela', 'Diamond', female, 7)] ;
+Gang = [kid('Mary', 'Diamond', female, 7), kid('David', 'Grant', male, 8), kid('Angela', 'Leung', female, 5)] ;
+Gang = [kid('Mary', 'Grant', female, 8), kid('David', 'Diamond', male, 7), kid('Angela', 'Leung', female, 5)] ;
+false.
+
+Does not uniquely identify.

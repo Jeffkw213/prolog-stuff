@@ -1,0 +1,232 @@
+%% ----------------------------------------------------------
+
+%% EECS 3401 Fall 2020 Assignment 2 
+
+%% Family name: Kwan
+
+%% Given name: Jeff
+
+%% Student number: 216 396 764
+
+
+
+%%    Answers to Questions 6-10
+
+%% Instructions: 
+
+%% Please edit this file in the following way to answer the text
+%% questions of Assignment 1. 
+
+%% - Please replace any occurence of '[yes/no]' with either 'yes' or
+%% 'no' to answer the respective question.
+
+%% - Replace any occurence of '[explain N words]' or '[if yes (resp.
+%%   no), explain N words]' with an explanation containing no more
+%%   than N words if the condition (yes/no) applies to your previous
+%%   answer.
+
+%% - Do not remove any other lines, in particular do not remove the
+%%   task-tags (<tasknumber>)
+
+%% - Any line starting with a '%' will be ignored.
+
+%% - Submit this file electronically.
+
+%% ----------------------------------------------------------
+
+
+
+%% 6. Which of the four heuristics are admissible?
+
+%%  - hfn_null
+<6.1>
+yes
+
+%%  - hfn_misplaced
+<6.2>
+yes
+
+%%  - hfn_manhattan
+<6.3>
+yes
+
+%%  - hfn_inversions
+<6.4>
+no
+
+
+
+
+%% /* ------------------------------------------------------ */
+
+% 7. Suppose for sliding a tile to the left we would change the
+% cost from 1 to 0.5 and leave all the other moves the same cost.
+% Does this affect the admissibility of the heuristics? Which of
+% them are admissible now?
+
+
+%%  - hfn_null
+<7.1.1>
+yes
+
+<7.1.2>
+Answer: Yes
+
+
+%%  - hfn_misplaced
+<7.2.1>
+no
+
+<7.2.2>
+hfn_misplaced will not be admissible since sliding tiles to the left 
+cost has decreased from 1 to 0.5 thus decreasing the cost whenever moving left. This
+makes h*(n) decrease making it less than h(n) when arrived at the goal state.
+
+current state is
+1 2 3
+x 4 5
+7 8 6
+goal state: [1 2 3 4 5 6 7 8 x]
+hfn_misplaced is 3
+but goal state is left , left , up
+so: 0.5 + 0.5 + 1 = 2
+h(n) > h*(n)
+
+%%  - hfn_manhattan
+<7.3.1>
+no
+
+<7.3.2>
+hfn_manhattan will not be admissible since sliding tiles to the left 
+cost has decreased from 1 to 0.5 thus decreasing the cost whenever moving left. This
+makes h*(n) < h(n) when arrived at the goal state.
+
+current state is
+1 2 3
+x 4 5
+7 8 6
+goal state: [1 2 3 4 5 6 7 8 x]
+hfn_manhattan is 1 + 1 + 1 = 3
+but goal state is left , left , up
+so: 0.5 + 0.5 + 1 = 2
+h(n) > h*(n)
+
+%%  - hfn_inversions
+<7.4.1>
+no
+
+<7.4.2>
+hfn_inversions is not admissible since it h(N) = sum of permutation hfn_inversions.
+Decreasing h*(N) will not make hfn_inversions be admissible.
+for example:
+1 2 3
+4 5 x
+7 8 6
+
+h(n) = 2 and h*(n) = 1
+making it not admissible
+
+
+
+%% /* ------------------------------------------------------ */
+
+% 8. Now suppose we would change the cost for sliding a tile to the
+% left to 2 and leave all the other moves the same cost. Does this
+% now affect the admissibility of the four heuristics? Again, which
+% of them are admissible?
+
+%%  - hfn_null
+<8.1.1>
+yes
+
+<8.1.2>
+
+
+
+%%  - hfn_misplaced
+<8.2.1>
+yes
+
+<8.2.2>
+
+
+
+%%  - hfn_manhattan
+<8.3.1>
+yes
+
+<8.3.2>
+
+
+
+%%  - hfn_inversions
+<8.4.1>
+no
+
+<8.4.2>
+hfn_inversion will still not be admissible since h(n) = is the sum of all
+permutive inversions. Even if increasing the cost of moving left it wouldn't always 
+make hfn_inversion admissible.
+hfn_inversions is not admissible since it h(N) = sum of permutation hfn_inversions.
+
+
+
+
+%% /* ------------------------------------------------------ */
+
+% 9. In the former modification (sliding to the LEFT costs 0.5), can
+% you say for sure which heuristic will be the fastest (expand the
+% least number of states) in finding a (not necessary optimal)
+% solution? Explain.
+<9.1>
+yes
+
+<9.2>
+hfn_inversion would be fastest, since there is a formula that determines
+if the puzzle is solvable:
+1. if the grid is odd, then the state has an even number of inversions.
+2. if the grid is even and the blank is on an odd numbered row, then the state has an even number of inversion. 
+3. if the grid is even and the blank is an even numbered row, then the statehas an odd number of inversion.
+
+This could cut down the number of nodes in a tree, making it the fastest. 
+
+%% /* ------------------------------------------------------ */
+
+% 10. One can obtain another heuristic for the N-puzzle by relaxing the
+% problem as follows: let's say that a tile can move from square A to
+% square B if B is blank.  The exact solution to this problem defines
+% Gaschnig's heuristic. Explain why Gaschnig's heuristic is at
+% least as accurate as hfn_misplaced.  Show some cases where it
+% is more accurate than both the hfn_misplaced} and 
+% hfn_manhattan} heuristics.  Can you suggest a way to calculate
+% Gaschnig's heuristic efficiently?
+
+<10.1>
+Since hfn_misplaced can place any tile in any other position in one move
+Gaschnig's heuristic can only move a tile to the blank spot, Gaschnig will
+always take atleast one move to get a tile to its proper position, and may 
+require two moves if the blank is located in its final position and the
+tile is still misplaced.
+
+<10.2>
+target state:
+1 2
+3 x
+
+State:
+2 1 
+3 x
+
+hfn_misplaced = 2
+hfn_manhattan = 1 + 1 = 2
+Gaschnig's heuristic = 3
+
+<10.3>
+moves = 0
+while not(goal state):
+    if blank is in goal position:
+        swap blank any misplaced tiles
+    else
+        swap blank with match tiles
+    moves++
+return moves
